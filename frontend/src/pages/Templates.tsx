@@ -75,7 +75,7 @@ const BASELINE_RESUME = {
 type DeviceMode = 'desktop' | 'tablet' | 'mobile' | 'a4'
 
 const COLOR_PRESETS = [
-  { name: 'Default', hex: '#C8F135' },
+  { name: 'Cyan Glow', hex: '#06B6D4' },
   { name: 'Azure Blue', hex: '#0078d4' },
   { name: 'Cardinal Red', hex: '#8C1515' },
   { name: 'Emerald', hex: '#107c41' },
@@ -96,7 +96,7 @@ export default function Templates() {
   
   // Custom design configurations
   const [fontFamily, setFontFamily] = useState('Inter, sans-serif')
-  const [accentColor, setAccentColor] = useState('#C8F135')
+  const [accentColor, setAccentColor] = useState('#06B6D4')
   const [margin, setMargin] = useState('20px')
   
   const [deviceMode, setDeviceMode] = useState<DeviceMode>('a4')
@@ -148,7 +148,7 @@ export default function Templates() {
   // Reset custom customizations back to defaults
   const handleResetDesign = () => {
     setFontFamily('Inter, sans-serif')
-    setAccentColor('#C8F135')
+    setAccentColor('#06B6D4')
     setMargin('20px')
   }
 
@@ -169,7 +169,7 @@ export default function Templates() {
   }
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-[calc(100vh-73px)] overflow-hidden font-sans">
+    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-full overflow-hidden font-sans">
       
       {/* Left Column: Selector Pickers and Design Panel */}
       <div className="w-full md:w-80 border-r border-border bg-card/25 p-6 flex flex-col shrink-0 overflow-y-auto space-y-6">

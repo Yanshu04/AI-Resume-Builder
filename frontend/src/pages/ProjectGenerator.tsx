@@ -62,7 +62,7 @@ export default function ProjectGenerator() {
   }
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-[calc(100vh-73px)] overflow-hidden font-sans">
+    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-full overflow-hidden font-sans">
       
       {/* Left Column: Form Input */}
       <div className="w-full md:w-80 border-r border-border bg-card/25 p-6 flex flex-col shrink-0 overflow-y-auto space-y-6">

@@ -45,134 +45,156 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans selection:bg-accent selection:text-background">
+    <div className="h-screen flex flex-col bg-background text-foreground font-sans selection:bg-accent selection:text-white overflow-hidden">
       
-      {/* Top Header */}
-      <header className="border-b border-border bg-background/80 backdrop-blur-md px-6 py-4 flex items-center justify-between sticky top-0 z-50 shrink-0">
-        <div className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight select-none">
-            RESUME<span className="text-accent">.AI</span>
-          </span>
-          <span className="text-xs uppercase font-mono px-2 py-0.5 border border-accent/20 text-accent bg-accent/5 rounded">
-            v1.0.0
+      {/* Top Manga Header */}
+      <header className="border-b-[2.5px] border-black bg-white px-6 py-3.5 flex items-center justify-between sticky top-0 z-50 shrink-0 shadow-[0_2px_0px_#111111]">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center">
+            <span className="bg-black text-white font-black text-lg px-2.5 py-1 tracking-wider border-2 border-black -rotate-1 shadow-manga-sm select-none">
+              RESUME
+            </span>
+            <span className="bg-accent text-white font-black text-lg px-2 py-1 tracking-wider border-2 border-black rotate-1 -ml-1 shadow-manga-sm select-none">
+              MANGA
+            </span>
+          </div>
+          <span className="hidden sm:inline-block text-[11px] font-black uppercase tracking-wider px-2 py-0.5 border-2 border-black bg-yellow-300 text-black shadow-[1.5px_1.5px_0px_#111111] -rotate-2 select-none">
+            VOL. 01 ⚡
           </span>
         </div>
-        <div className="flex items-center gap-4">
-          <span className="text-xs text-muted-foreground font-mono uppercase tracking-widest">Local Workspace</span>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 px-3 py-1 bg-secondary border-2 border-black shadow-manga-sm text-xs font-bold uppercase tracking-wider">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-black animate-pulse"></span>
+            <span>HUMAN STUDIO // ACTIVE</span>
+          </div>
         </div>
       </header>
 
-      {/* Main Layout */}
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
-        {/* Sidebar */}
-        <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-border bg-card/25 flex flex-col justify-between shrink-0 overflow-y-auto">
-          <div className="p-4 space-y-1.5">
-            <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase px-3 mb-2 font-semibold">
-              Core Modules
+      {/* Main Layout: Comic Panels & Gutters */}
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden bg-background manga-screentone">
+        {/* Sidebar: Comic Navigation Strip */}
+        <aside className="w-full md:w-64 border-b-[2.5px] md:border-b-0 md:border-r-[2.5px] border-black bg-white flex flex-col justify-between shrink-0 overflow-y-auto">
+          <div className="p-3.5 space-y-2">
+            <div className="text-[10px] font-black tracking-widest text-black uppercase px-2 mb-2 flex items-center justify-between border-b-2 border-black pb-1">
+              <span>// CHAPTERS & PANELS //</span>
+              <span className="text-[9px] bg-black text-white px-1.5 py-0.5 font-mono">ARC 1</span>
             </div>
+            
             <button
               onClick={() => setActiveView('chat')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'chat' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <MessageSquare className="h-4 w-4" />
-              Chat Builder
+              <MessageSquare className="h-4 w-4 shrink-0" />
+              <span>Chat Interview</span>
             </button>
+
             <button
               onClick={() => setActiveView('generators')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'generators' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <Sparkles className="h-4 w-4" />
-              AI Toolkit
+              <Sparkles className="h-4 w-4 shrink-0" />
+              <span>AI Power Tools</span>
             </button>
+
             <button
               onClick={() => setActiveView('projects')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'projects' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <Folder className="h-4 w-4" />
-              Project Gen
+              <Folder className="h-4 w-4 shrink-0" />
+              <span>Project Arc</span>
             </button>
+
             <button
               onClick={() => setActiveView('editor')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'editor' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <FileText className="h-4 w-4" />
-              Resume Editor
+              <FileText className="h-4 w-4 shrink-0" />
+              <span>Manuscript Editor</span>
             </button>
+
             <button
               onClick={() => setActiveView('templates')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'templates' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <Layout className="h-4 w-4" />
-              Templates
+              <Layout className="h-4 w-4 shrink-0" />
+              <span>Visual Layouts</span>
             </button>
+
             <button
               onClick={() => setActiveView('optimize')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'optimize' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <Zap className="h-4 w-4" />
-              Optimize JD
+              <Zap className="h-4 w-4 shrink-0" />
+              <span>JD Match Audit</span>
             </button>
+
             <button
               onClick={() => setActiveView('import')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'import' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <FileDown className="h-4 w-4" />
-              Import Profile
+              <FileDown className="h-4 w-4 shrink-0" />
+              <span>Import Script</span>
             </button>
+
             <button
               onClick={() => setActiveView('versions')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'versions' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <History className="h-4 w-4" />
-              Versions
+              <History className="h-4 w-4 shrink-0" />
+              <span>History Volumes</span>
             </button>
+
             <button
               onClick={() => setActiveView('export')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
+              className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-bold border-2 border-black transition-all ${
                 activeView === 'export' 
-                  ? 'bg-accent text-background font-semibold shadow-md shadow-accent/5' 
-                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/40'
+                  ? 'bg-accent text-white shadow-manga translate-x-[-1px] translate-y-[-1px]' 
+                  : 'bg-white text-black hover:bg-yellow-50 hover:shadow-manga-sm'
               }`}
             >
-              <Download className="h-4 w-4" />
-              Export Resume
+              <Download className="h-4 w-4 shrink-0" />
+              <span>Publish & Print</span>
             </button>
           </div>
-          <div className="p-4 border-t border-border bg-background/50 font-mono text-[9px] text-muted-foreground uppercase tracking-widest space-y-1 select-none">
-            <div>SESSION: ACTIVE</div>
-            <div>LLM: QWEN2.5 (1.5B)</div>
+
+          <div className="p-3 border-t-2 border-black bg-secondary text-[10px] font-bold text-black uppercase tracking-wider space-y-1 select-none">
+            <div className="flex justify-between items-center">
+              <span>MANGA ENGINE</span>
+              <span className="px-1.5 py-0.5 bg-black text-white text-[9px] font-black">LOCAL INK</span>
+            </div>
+            <div className="text-muted-foreground font-mono text-[9px]">OFFLINE MODEL READY</div>
           </div>
         </aside>
 
@@ -180,14 +202,17 @@ export default function App() {
         {renderActiveView()}
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-background/50 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
-        <span className="text-xs font-mono text-muted-foreground">
-          LOCAL SINGLE-USER WORKSPACE // ANONYMOUS
-        </span>
-        <span className="text-xs font-mono text-muted-foreground">
-          OFFLINE LLM INFERENCE MODULE CONNECTED
-        </span>
+      {/* Footer: Manga Issue Details */}
+      <footer className="border-t-[2.5px] border-black bg-white px-6 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 shrink-0 text-xs font-bold uppercase tracking-wider">
+        <div className="flex items-center gap-2">
+          <span className="bg-black text-white px-2 py-0.5 text-[10px] font-black shadow-[1.5px_1.5px_0px_#E11D48]">ISSUE #01</span>
+          <span>HUMAN-CRAFTED MANGA RESUME STUDIO</span>
+        </div>
+        <div className="flex items-center gap-3 text-stone-600 text-[11px] font-mono">
+          <span>HALFTONE GRID SYSTEM</span>
+          <span>•</span>
+          <span>2.5PX INK BORDERS</span>
+        </div>
       </footer>
     </div>
   )

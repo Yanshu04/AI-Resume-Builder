@@ -141,7 +141,7 @@ export default function AIContentGenerators() {
   }
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-[calc(100vh-73px)] overflow-hidden font-sans">
+    <div className="flex-1 flex flex-col md:flex-row bg-background text-foreground h-full overflow-hidden font-sans">
       
       {/* Left Column: Selector Tabs */}
       <div className="w-full md:w-64 border-r border-border bg-card/25 flex flex-col shrink-0 overflow-y-auto p-4 space-y-1">

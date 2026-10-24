@@ -8,31 +8,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0D0D0D",
-        foreground: "#F5F5F0",
+        background: "#FBFBFA", // Manga newsprint paper canvas
+        foreground: "#111111", // Deep ink black
         accent: {
-          DEFAULT: "#C8F135",
-          foreground: "#0D0D0D",
+          DEFAULT: "#E11D48", // Shonen Jump dramatic crimson / comic red
+          foreground: "#FFFFFF",
         },
         card: {
-          DEFAULT: "#1A1A1A",
-          foreground: "#F5F5F0",
+          DEFAULT: "#FFFFFF", // Crisp white comic panel
+          foreground: "#111111",
         },
-        border: "#2A2A2A",
-        input: "#1A1A1A",
-        ring: "#C8F135",
+        border: "#111111", // Heavy ink black stroke
+        input: "#FFFFFF",
+        ring: "#E11D48",
         primary: {
-          DEFAULT: "#C8F135",
-          foreground: "#0D0D0D",
+          DEFAULT: "#111111", // Ink black
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#2A2A2A",
-          foreground: "#F5F5F0",
+          DEFAULT: "#F3F3F0", // Screentone light gray
+          foreground: "#111111",
         },
         muted: {
-          DEFAULT: "#1A1A1A",
-          foreground: "#A0A09A",
+          DEFAULT: "#E8E8E4",
+          foreground: "#555555",
         },
+      },
+      boxShadow: {
+        'manga-sm': '2px 2px 0px 0px #111111',
+        'manga': '3.5px 3.5px 0px 0px #111111',
+        'manga-lg': '5px 5px 0px 0px #111111',
+        'manga-accent': '4px 4px 0px 0px #E11D48',
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
